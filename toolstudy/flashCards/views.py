@@ -14,7 +14,7 @@ class ListCardData(APIView):
         return Response(card_serializer.data)
 
     def post(self, request):
-        serializer = CardDataSerializer(request.data)
+        serializer = CardDataSerializer(data= request.data)
         if serializer.is_valid():
             serializer.save() 
 
@@ -46,6 +46,6 @@ class ListDeck(APIView):
         return Response(serializer.data)
 
     def post(self, request):
-        serializer = CardDataSerializer(request.data)
+        serializer = DeckSerializer(request.data)
         if serializer.is_valid():
             serializer.save() 

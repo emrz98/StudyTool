@@ -9,5 +9,5 @@ class Deck(models.Model):
 class CardData(models.Model):
     question = models.CharField(max_length=100)
     answer = models.CharField(max_length=100)
-    cards = models.ForeignKey(Deck, on_delete=models.CASCADE)
+    deck = models.ForeignKey(Deck, on_delete=models.CASCADE)
 
